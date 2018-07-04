@@ -83,3 +83,16 @@ SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" 
 /* ----------- get database & owner ------------------- */
 SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" FROM pg_catalog.pg_database d;
 mv layout_file app/views/layouts/application.html.erb
+
+
+/* --------------- for / next -------------------- */
+git add -A
+git commit -m "&&&"
+git push
+git push heroku static-pages:master
+
+
+
+/* ------------ heroku commands   ------------------ */
+heroku releases
+heroku ps
