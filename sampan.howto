@@ -1,0 +1,31 @@
+/* ----------- postgresql ---------------- */
+$ su
+$ su postgres
+$ createdb sampan
+$ psql -s sampan
+# create user sampan_admin password '5AM9AN';
+# GRANT ALL PRIVILEGES ON DATABASE sampan TO sampan_admin;
+# \q
+$ createdb sampan_test
+$ psql -s sampan_test
+# create user sampan_test password 'SAMPAN';
+# GRANT ALL PRIVILEGES ON DATABASE sampan_test TO sampan_test;
+# GRANT ALL PRIVILEGES ON DATABASE sampan_test TO sampan_admin;
+# \q
+$ exit
+$ exit
+
+
+/* ----
+$ bundle install
+$ bundle update
+$ rails db:migrate
+$ rails test
+$ rails s
+
+/* ----
+$ git init
+$ git add -A
+$ git commit -m "Initialize Sampan"
+$ git remote add origin https://hhaller591026@bitbucket.org/hhaller591026/sampan.git -f
+$ git push -u origin --all
