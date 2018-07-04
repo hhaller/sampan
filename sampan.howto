@@ -70,7 +70,7 @@ $ git push -u origin static-pages
 $ git push
 
 /* ------------ heroku
-git push heroku static-pages
+git push heroku static-pages:master
 
 /* ---------- more changes
 rails g controller StaticPages home help
@@ -82,3 +82,4 @@ SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" 
 
 /* ----------- get database & owner ------------------- */
 SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" FROM pg_catalog.pg_database d;
+mv layout_file app/views/layouts/application.html.erb
