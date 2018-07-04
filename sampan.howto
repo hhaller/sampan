@@ -15,17 +15,51 @@ $ psql -s sampan_test
 $ exit
 $ exit
 
+/* --------------- RAILS ----------------------- */
+rails new sampan
+cd sampan
 
-/* ----
-$ bundle install
-$ bundle update
-$ rails db:migrate
+Gemfile: remove sqlite and add postgresql
+database.yml: configure database parameters
+
+bundle install
+bundle update
+rails db:migrate
 $ rails test
 $ rails s
 
-/* ----
+/* ------------- GIT ---------------------- */
 $ git init
 $ git add -A
+$ git status # give a list of pending updates
 $ git commit -m "Initialize Sampan"
-$ git remote add origin https://hhaller591026@bitbucket.org/hhaller591026/sampan.git -f
+$ git remote add origin git@github.com:hhaller/sampan.git
 $ git push -u origin --all
+
+
+/* ---- some changes ------ */
+vi app/controllers/application_controller.rb
+vi config/routes.rb
+
+/* ----- then ------- */
+git commit -am "Add hello"
+git push
+heroku create
+git push heroku master
+heroku logs
+
+
+git checkout -b static-pages
+/* -- Switched to a new branch 'static-pages'
+
+/* ----------- generate some static pages
+rails g controller StaticPages home help
+/* ----------- to destroy same static pages
+rails destroy  controller StaticPages home help
+
+/* ---------- GIT
+$ git add -A
+$ git commit -m "Add a Static Pages controller"
+$ git push -u origin static-pages 
+# or simply 
+$ git push
