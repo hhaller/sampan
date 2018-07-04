@@ -57,9 +57,28 @@ rails g controller StaticPages home help
 /* ----------- to destroy same static pages
 rails destroy  controller StaticPages home help
 
+/* ---------- generate a model
+rails generate model User name:string email:string
+/* ---------- destroy the model
+rails destroy model User
+
 /* ---------- GIT
 $ git add -A
 $ git commit -m "Add a Static Pages controller"
 $ git push -u origin static-pages 
 # or simply 
 $ git push
+
+/* ------------ heroku
+git push heroku static-pages
+
+/* ---------- more changes
+rails g controller StaticPages home help
+
+\du
+
+
+SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" FROM pg_catalog.pg_database d WHERE d.datname = 'sampan_test' ORDER BY 1;
+
+/* ----------- get database & owner ------------------- */
+SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" FROM pg_catalog.pg_database d;
