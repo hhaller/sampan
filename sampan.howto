@@ -65,8 +65,8 @@ rails destroy model User
 /* ---------- GIT
 $ git add -A
 $ git commit -m "Add a Static Pages controller"
-$ git push -u origin static-pages 
-# or simply 
+$ git push -u origin static-pages
+# or simply
 $ git push
 
 /* ------------ heroku
@@ -82,7 +82,7 @@ SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" 
 
 /* ----------- get database & owner ------------------- */
 SELECT d.datname as "database", pg_catalog.pg_get_userbyid(d.datdba) as "Owner" FROM pg_catalog.pg_database d;
-mv layout_file app/views/layouts/application.html.erb
+
 
 
 /* --------------- for / next -------------------- */
@@ -96,3 +96,23 @@ git push heroku static-pages:master
 /* ------------ heroku commands   ------------------ */
 heroku releases
 heroku ps
+
+
+
+/* ------------------------------------------------ */
+# now would be a good time to commit if you haven’t done so in a while:
+
+$ rails test
+$ git add -A
+$ git commit -m "Make a basic User model (including secure passwords)"
+# Then merge back into the master branch and push to the remote repository:
+
+$ git checkout master
+$ git merge modeling-users
+$ git push
+To get the User model working in production, we need to run the migrations at Heroku, which we can do with heroku run:
+
+$ rails test
+$ git push heroku
+$ heroku run rails db:migrate
+/* ------------------------------------------------- */
