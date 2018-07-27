@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # handle a succesfull save
+      log_in @user
       flash[:success] = "Bienvenido a Sampan"
       redirect_to @user # equivalent (rails infers): redirect_to user_url(@user)
     else
