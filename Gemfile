@@ -57,6 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # CSS styling
 gem 'bootstrap-sass'
 
+# para...
 gem 'rails-controller-testing'
 
 # Used by has_secure_password
